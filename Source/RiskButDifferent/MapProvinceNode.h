@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/SphereComponent.h"
+//#include "MyPlayerController.h"
 #include "MapProvinceNode.generated.h"
 
 UCLASS()
@@ -26,4 +28,13 @@ public:
 	//Test
 	void TestBois();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<AActor*> worldPoints;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		USphereComponent* body;
+	UFUNCTION()
+		void Highlight(UPrimitiveComponent* TouchedComponent);
+
+	//AMyPlayerController* controller;
 };
